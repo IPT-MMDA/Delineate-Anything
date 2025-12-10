@@ -12,6 +12,8 @@ import numpy as np
 import math
 from tqdm import tqdm
 
+from rasterio.transform import from_bounds
+
 import time
 
 ogr.UseExceptions()
@@ -142,7 +144,6 @@ def simplify_internal(src_gpkg, src_layer_name, dst_gpkg, dst_layer_name, densif
     for worker in simplification_workers:
         worker.started_event.wait()
 
-    counterr = 0
     while True:
         incidence_np[:, :] = 0
         block_extent = [minx, maxx, miny, maxy]

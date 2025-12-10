@@ -10,6 +10,8 @@ from .IDMapper import IncrementalFastMapper
 from osgeo import ogr
 import logging
 
+import cv2
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -32,7 +34,7 @@ class PostprocHandler:
         self.id_mapper = IncrementalFastMapper(10_000_000)
 
         # create queues
-        self.queue = []# multiprocessing.Queue(self.queue_tiles_capacity)
+        self.queue = []
 
         # create shared dictionaries
         self.manager = multiprocessing.Manager()
