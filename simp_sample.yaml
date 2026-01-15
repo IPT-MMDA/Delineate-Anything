@@ -6,12 +6,12 @@ dst: data/delineated/Sample.simp.gpkg
 superres_scale: 2
 
 # Final epsilon value is calculated using following formula: 2 * epsilon_scale * superres_scale * sqrt((0.5 * dx)^2 + (0.5 * dy)^2)
-epsilon_scale: 1
+epsilon_scale: 2
 
 # How many processes will be spawn for the task. -1 - all available cpus
 num_workers: -1
 # 1 byte per pixel => 65k*65k = 4GB. for delineated with default parameters S2 data it effectively corresponds to square with 164km side.
-raster_resolution: [8096, 8096]
+raster_resolution: [8192, 8192]
 
 # No reason to touch it if you use delineation result using our code
 layer_name: fields

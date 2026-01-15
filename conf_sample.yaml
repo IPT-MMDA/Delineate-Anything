@@ -55,7 +55,7 @@ passes:
     delineation_config:
       pixel_area_threshold: 512
       remaining_area_threshold: 0.8
-      compose_merge_iou: 0.8
+      compose_merge_iou: 0.6
 
       merge_iou: 0.8
       merge_relative_area_threshold: 0.5
@@ -89,8 +89,8 @@ filtering_args:
 
 simplification_args:
   simplify: True
-  epsilon_scale: 0.5
+  epsilon_scale: 2
   # how many processes spawn for the task. -1 - all available cpus
   num_workers: -1
   # 1 byte per pixel => 65k*65k = 4GB, 32k*32k = 1GB. Some system cant handle arrays bigger than 32k*32k due to int overflow
-  raster_resolution: [8096, 8096]
+  raster_resolution: [8192, 8192]
